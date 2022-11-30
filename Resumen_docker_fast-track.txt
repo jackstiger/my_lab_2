@@ -1,0 +1,100 @@
+FAST TRACK DOCKER
+--> Construir una imagen
+docker build -t nombre_imagen .    (para que levante el archivo dockerfile generado en el mismo directorio)
+
+--> DOCKER registry --> Repositorio publico de docker en la nube
+
+--> Iniciar container 
+docker run --name mini_linux_1 -dti alpine
+
+
+--> Copiar archivos al container:
+docker cp file.txt container_id:/home/
+
+--> Abrir a una terminal al container
+docker exec -ti container_id bash
+
+--> ejecutar comandos desde afuera
+docker exec -ti container_id comando_linux  
+docker exec -ti 05fb8c9db7fa cat /home/file.txt
+
+--> Ver logs
+docker logs -f container_id -nx    (x=number of lines that you want to show)
+
+--> Network
+docker network ls
+docker inspect network_ID
+
+Modos de red:
+	* Bridge (por defecto)
+	* none
+	* Host   (compartir la ip del host)
+	
+--Crear una nueva red	
+docker network create --driver tipo_red --subnet 192.168.15.0/24 nombre_net
+
+--Correr un container a una nueva red especifica
+docker run -network [none,host,bridge]
+
+
+docker inspect container_id  --> Podemos ver detalles de la red del container
+
+DNS del Kernel de linux--> Utilizado x DOCKER Daemon --> De ahi lo importante de que tengan un nombre los container cuando se crean
+
+Exponer puertos:
+
+sudo run --name container_name -p nro_puerto puerto_host:destino_container
+
+--> Crear volumenes:  --> Directorio por defecto:  /var/lib/docker/volumes/nombre_volumen/_data
+docker volume create nombre_volumen
+docker run --name prueba_1 -v /home/pepe/files:/tmp/archivos/ -d nginx
+
+docker volume ls 
+docker volume inspect nombre_volumen
+
+
+-----------------------------------------------------------------------------------------------------------------
+DOCKER COMPOSE
+
+version
+
+services:
+	
+networks
+
+volumes
+
+-----------------------------------------------------------------------------------------------------------------
+docker-compose up -d
+docker-compose stop
+docker-compose down   
+docker-compose logs   
+docker-compose ls
+docker-compose ps
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
