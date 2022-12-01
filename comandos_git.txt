@@ -42,3 +42,5 @@ git checkout nombre_rama --> me muevo entre ramas
 				  
 git merge nombre_rama --> fusiono a rama main los cambios que estaba en la otra de dev
 
+## proximo video del tutorial:
+https://www.youtube.com/watch?v=7-JHoPyJy-Q
