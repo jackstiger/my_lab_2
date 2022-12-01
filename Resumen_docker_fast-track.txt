@@ -1,3 +1,6 @@
+SQL1978.
+nb_work
+
 FAST TRACK DOCKER
 --> Construir una imagen
 docker build -t nombre_imagen .    (para que levante el archivo dockerfile generado en el mismo directorio)
