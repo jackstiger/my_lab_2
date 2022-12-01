@@ -23,7 +23,6 @@ git commit -m "comentario, preferentemente relacionado con un tck de Phabricator
 para no tener que commitear cuando se eliminan archivos
 
 git rm nombre_archivo
-
 git mv nombre_archivo nombre_archivo2
 
 git restore nombre_archivo  --> lleva al estado anterior del ultimo commit
