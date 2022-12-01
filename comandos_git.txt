@@ -1,0 +1,31 @@
+
+git --version
+
+git config --global user.name "Sergio Jaque"
+git config --global user.email sergioj@exo.com.ar
+
+git commit --amend --reset-author
+
+git config --global core.editor "code --wait"
+
+para usuarios windows --> CR OFF  LF TRUE
+
+git config --global core.autocrlf True
+
+git config -h   --> para visualizar mas opciones de configuracion
+
+git add --> los archivos pasan a la etapa de stage  (etapa intermedia)
+
+git commit -m "comentario, preferentemente relacionado con un tck de Phabricator"
+
+para no tener que commitear cuando se eliminan archivos
+
+git rm nombre_archivo
+git mv nombre_archivo nombre_archivo2
+
+git restore nombre_archivo  --> lleva al estado anterior del ultimo commit
+
+.gitignore    --> dentro defino todos los archivos y carpetas que no quiero que se tengan en cuenta
+				  pero si commiteo a .gitignore
+				  
+				  
